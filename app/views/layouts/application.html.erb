@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Bitcoin india</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+  <% if current_user.present? %>
+welcome <%= current_user.email %> <%= link_to 'Logout',logout_path %>
+
+
+<%else%>
+    <nav class="navbar navbar-inverse">
+      
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="brand" href="#">
+            <!-- UNCOMMENT THE CSS VALUES TO TEST OTHER DIMENTIONS -->
+            <img  <%=  link_to image_tag("bitcoinindia.png", alt: "logo"),
+        '/' %> 
+            </a></div>
+            
+      <a class="navbar-brand" href="#">Bitcoin India</a> 
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-top: 0px; opacity: 1; background-color: rgba(59, 59, 59, 0.74902);">
+<div class="container">
+
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/">
+
+<div id="main-img"></div>
+</a>
+<div class="btc-values">
+<div class="navbar-header" style="margin-left: 20px;min-width:97%;">
+<div>
+<div style="float: left">
+<span class="price_ticker" style="color: #fff">Buy 1 BTC= <span id="buyvalue"> 497703</span></span>
+</div>
+<div style="float: left;">
+<select name="select" id="select_currency2" class="select" onchange="convertrates('buy', 'select_currency2');">
+<option value="INR">INR</option>
+<option value="USD">USD</option>
+<option value="NZD">NZD</option>
+<option value="TWD">TWD</option>
+<option value="MYR">MYR</option>
+<option value="AUD">AUD</option>
+<option value="SGD">SGD</option>
+<option value="EUR">EUR</option>
+<option value="JPY">JPY</option>
+<option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="CNY">CNY</option>
+</select>
+</div>
+</div>
+<div>
+<div style="float: left">
+<span class="price_ticker" style="color: #fff">Sell 1 BTC= <span id="sellvalue"> 494571</span></span>
+</div>
+<div style="float: left;">
+<select name="select" id="select_currency3" class="select" onchange="convertrates('sell', 'select_currency3');">
+<option value="INR">INR</option>
+<option value="USD">USD</option>
+<option value="NZD">NZD</option>
+<option value="TWD">TWD</option>
+<option value="MYR">MYR</option>
+<option value="AUD">AUD</option>
+<option value="SGD">SGD</option>
+<option value="EUR">EUR</option>
+<option value="JPY">JPY</option>
+<option value="GBP">GBP</option>
+<option value="CAD">CAD</option>
+<option value="CNY">CNY</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+
+<li><a href="#tbuy" style="padding-top: 15px;">BUY &amp; SELL</a></li>
+<li class=""><a target="_blank" href="https://www.bitcoin-india.org/" style="padding-top: 15px;">EXCHANGE</a></li>
+<li class=""><a target="_blank" href="https://www.bitcoin-india.org/coin_swap" style="padding-top: 15px;">COIN SWAP</a></li>
+<li class="btn-group ">
+<a class="dropdown-toggle" data-toggle="dropdown" href="https://pool.bitcoin-india.org/" style="padding-top: 15px;">
+MINING
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li class=""><a href="/mining">HOSTED MINING</a></li>
+<li class=""><a href="/mining_pack_pricing">MINING PACK</a></li>
+<li><a target="_blank" href="https://pool.bitcoin-india.org/">MINING POOL</a></li>
+<li><a href="https://alloscomp.com/bitcoin/calculator" target="_blank" title="Bitcoin mining profit calculator">BITCOIN MINING PROFIT CALCULATOR</a></li>
+</ul>
+</li>
+<li class=""><a href="https://www.bitcoin-india.org/club" style="padding-top: 15px;">CLUB</a></li>
+
+<li><a href="#tjoin" style="padding-top: 15px;">LOGIN / JOIN</a></li>
+</ul>
+</div>
+</div>
+
+</nav>
+
+
+<% end %>
+
+  	<%= notice %>
+  	<%= alert %>
+    <%= yield %>
+  </body>
+</html>
