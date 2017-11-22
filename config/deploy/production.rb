@@ -4,7 +4,7 @@ set :stage, :production
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
-server '139.59.34.51', user: 'deploy', roles: %w{app db web}
+server '139.59.89.62', user: 'dply', roles: %w{app db web}
 
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
