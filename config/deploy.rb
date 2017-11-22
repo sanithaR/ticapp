@@ -7,9 +7,9 @@ ssh_options = {keys: ["#{ENV['HOME']}/.ssh/dev.pem"], forward_agent: true}
 
 
 set :application, "ticapp"
-set :repo_url, "git@github.com:excid3/my_repo.git"
+set :repo_url, "git@github.com:sanithaR/ticapp.git"
 
-set :deploy_to, '/home/deploy/ticapp'
+set :dply_to, '/home/dply/ticapp'
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
