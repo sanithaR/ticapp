@@ -1,6 +1,11 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.0"
 
+#ssh_options[:forward_agent] = true
+
+ssh_options = {keys: ["#{ENV['HOME']}/.ssh/dev.pem"], forward_agent: true}
+
+
 set :application, "ticapp"
 set :repo_url, "git@github.com:excid3/my_repo.git"
 

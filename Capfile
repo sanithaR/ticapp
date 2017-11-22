@@ -15,13 +15,15 @@ require "capistrano/deploy"
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
+require 'capistrano/bundler'
 require 'capistrano/rails'
-require 'capistrano/passenger'
+#require 'capistrano/passenger'
 
 # If you are using rbenv add these lines:
+
 require 'capistrano/rbenv'
 set :rbenv_type, :user
-set :rbenv_ruby
+set :rbenv_ruby, '2.4.2p198'
 
 # Include tasks from other gems included in your Gemfile
 #

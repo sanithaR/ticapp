@@ -61,7 +61,7 @@ end
 #gem 'capistrano', '~> 3.4'
 gem 'capistrano'
 gem 'capistrano-rails'
-gem 'capistrano-passenger'
+#gem 'capistrano-passenger'
 # Add this if you're using rbenv
 gem 'capistrano-rbenv'
 
